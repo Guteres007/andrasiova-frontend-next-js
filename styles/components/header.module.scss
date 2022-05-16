@@ -1,0 +1,63 @@
+.header {
+  border-bottom: 1px solid #f7ede6;
+  max-height: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoSection {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 70px;
+  width: 21%;
+}
+
+.menuSection {
+  width: 100%;
+  padding-left: 65px;
+  border-left: 1px solid #f7ede6;
+  border-right: 1px solid #f7ede6;
+}
+
+.menuSection ul {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}
+.menuSection ul li {
+  padding-right: 70px;
+}
+.menuSection ul li:last-child {
+  padding-right: 0;
+}
+.menuLink, .active {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  line-height: 48px;
+  text-decoration: none;
+}
+
+.menuLink:hover, .active {
+  position: relative;
+  text-decoration: none;
+  color: #9a4c12!important;
+}
+
+.active:before, .menuLink:hover:before  {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 6px;
+  background-color: #f4e7de;
+  bottom: 2px;
+}
+
+.socialSection {
+  width: 18%;
+  padding-left: 65px;
+}
