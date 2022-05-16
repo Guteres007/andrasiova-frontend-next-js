@@ -8,15 +8,15 @@
 .logoSection {
   display: flex;
   justify-content: flex-end;
-  padding-right: 70px;
+  padding: 34px 70px 40px 0;
   width: 21%;
 }
 
 .menuSection {
   width: 100%;
-  padding-left: 65px;
   border-left: 1px solid #f7ede6;
   border-right: 1px solid #f7ede6;
+  padding: 40px 0 40px 65px;
 }
 
 .menuSection ul {
@@ -58,6 +58,20 @@
 }
 
 .socialSection {
+  padding: 50px 0 40px 65px;
   width: 18%;
-  padding-left: 65px;
+}
+.socialSection svg {
+  width: 31px;
+}
+.socialSection ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+.socialSection ul li {
+  margin-right: 27px;
+}
+.socialSection ul li:last-child {
+  margin-right: 0;
 }

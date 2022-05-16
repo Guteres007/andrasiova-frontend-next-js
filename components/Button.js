@@ -3,17 +3,16 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 
 export default function Button({href, children}) {
-
     const router = useRouter()
 
     const handleClick = (e) => {
         e.preventDefault()
         router.push(href)
     }
-    if (href.length > 0) {
+    if (href?.length > 0) {
         return (
-            <Link href={href} onClick={handleClick}>
-                <a className={styles.button}>{children}</a>
+            <Link href={href}>
+                <a onClick={handleClick} className={styles.button}>{children}</a>
             </Link>
         )
     } else {

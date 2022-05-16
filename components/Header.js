@@ -1,20 +1,21 @@
 import styles from '../styles/components/header.module.scss'
 import Image from 'next/image'
 import logo from '../public/andrasiova-logo.webp'
-import {useRouter} from "next/router";
 import ActiveLink from "./Active-link";
 import Button from "./Button";
 import Link from "next/link";
+import {faFacebookSquare, faInstagramSquare, faYoutubeSquare} from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 
 
 export default function Header() {
-    const router = useRouter();
+
     return (
         <div className={styles.header}>
             <div className={styles.logoSection}>
                 <Link href={'/'}>
                     <a>
-                      <Image src={logo}/>
+                        <Image src={logo}/>
                     </a>
                 </Link>
             </div>
@@ -51,7 +52,31 @@ export default function Header() {
 
             </div>
             <div className={styles.socialSection}>
-                socky
+                <ul>
+                    <li>
+                        <Link href={'/pryc'}>
+                            <a>
+                                <FontAwesomeIcon className={'text-black'} icon={faFacebookSquare}/>
+                            </a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={'/pryc'}>
+                            <a>
+                                <FontAwesomeIcon className={'text-black'} icon={faInstagramSquare}/>
+                            </a>
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={'/pryc'}>
+                            <a>
+                                <FontAwesomeIcon className={'text-black'} icon={faYoutubeSquare}/>
+                            </a>
+                        </Link>
+                    </li>
+                </ul>
+
+
             </div>
         </div>
     )
