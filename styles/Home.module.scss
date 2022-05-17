@@ -1,0 +1,96 @@
+.mainHeader {
+  min-width: 740px;
+  max-width: 100%;
+}
+.jumbotron {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+.textUnderline {
+  position: relative;
+}
+.textUnderline:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  height: 24px;
+  background-color: #f4e7de;
+  display: block;
+}
+
+.mainHeader span {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 130px;
+  text-transform: uppercase;
+}
+.coverImage p {
+  position: relative;
+  text-align: right;
+  top: 70px;
+  right: -123px;
+}
+.mainHeaderPadding {
+  display: inline-block;
+  padding: 0 30px 0 0;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+
+.jumbotronParagraphSection {
+  position: relative;
+  min-width: 550px;
+  max-width: 100%;
+  margin-top: 60px;
+  border-bottom: 1px solid #f7ede6;
+  padding-bottom: 50px;
+}
+.jumbotronParagraphSection p {
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 41px;
+}
+.jumbotronParagraphSection .signature {
+  text-align: right;
+}
+.jumbotron .counter {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.jumbotron .counter .number {
+color: #9a4c12;
+font-family: "Oswald", sans-serif;
+font-size: 100px;
+font-weight: 700;
+font-style: normal;
+letter-spacing: normal;
+line-height: 130px;
+text-transform: uppercase;
+}
+.jumbotron .counter .text {
+  color: #000000;
+font-family: "Roboto", sans-serif;
+font-size: 19px;
+font-weight: 500;
+font-style: normal;
+letter-spacing: -0.44px;
+line-height: normal;
+text-align: left;
+}
+
+.sectionOffer {
+  padding: 100px 0 120px 0;
+  background: #f4e7de;
+}
