@@ -1,5 +1,7 @@
 @import "custom-variables";
 @import "~bootstrap/scss/bootstrap";
+@import "~react-image-gallery/styles/scss/image-gallery.scss";
+
 html,
 body {
   padding: 0;
@@ -12,4 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-black {
   color: #000;
+}
+.text-orange {
+  color: #9a4c12;
 }

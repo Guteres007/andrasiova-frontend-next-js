@@ -5,6 +5,7 @@ import Image from 'next/image'
 import coverImage from '../public/andrasiova-cover.png'
 import signature from '../public/podpis.png'
 import Title from "../components/Title";
+import HomepageProperty from "../components/Properties/HomepageProperty";
 
 export default function Home() {
     return (
@@ -61,6 +62,19 @@ export default function Home() {
                             <Title color={'black'} dotsColor={'white'}>
                                 Nabídka nemovitostí
                             </Title>
+                        </Col>
+                    </Row>
+                </Container>
+
+                <Container>
+                    <Row>
+                        <Col>
+                            <div className={styles.offers}>
+
+                                     <HomepageProperty/>
+                                     <HomepageProperty site={'right'}/>
+
+                            </div>
                         </Col>
                     </Row>
                 </Container>
