@@ -6,6 +6,7 @@ import coverImage from '../public/andrasiova-cover.png'
 import signature from '../public/podpis.png'
 import Title from "../components/Title";
 import HomepageProperty from "../components/Properties/HomepageProperty";
+import Button from "../components/Button";
 
 export default function Home() {
     return (
@@ -68,16 +69,28 @@ export default function Home() {
 
                 <Container>
                     <Row>
-                        <Col>
+                        <Col xl={12}>
                             <div className={styles.offers}>
 
                                      <HomepageProperty/>
-                                     <HomepageProperty site={'right'}/>
+                                     <HomepageProperty rightSite={true}/>
+                                     <HomepageProperty/>
 
                             </div>
                         </Col>
+
                     </Row>
                 </Container>
+
+                <Container>
+                    <Row>
+                       <Col>
+                            <Button >
+                                Zobrazit celou nabídku
+                            </Button>
+                        </Col>
+                </Row>
+                    </Container>
             </div>
         </BaseLayout>
     )

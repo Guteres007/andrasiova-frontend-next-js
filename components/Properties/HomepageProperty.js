@@ -5,10 +5,8 @@ import Link from "next/link";
 import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export default function HomepageProperty({site}) {
-    if (site === 'right') {
-        console.log(site)
-    }
+export default function HomepageProperty({rightSite}) {
+
     const images = [
         {
             original: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
@@ -22,10 +20,11 @@ export default function HomepageProperty({site}) {
     ];
 
     let leftNavigation = (onClick, disabled) => {
+
         return (
             <button
                 type="button"
-                className={"image-gallery-icon image-gallery-left-nav" + ' ' + styles.leftButton}
+                className={"image-gallery-icon image-gallery-left-nav" + ' ' + styles.leftButton + ' ' + (rightSite ? styles.leftButtonForRightSite  : '')}
                 disabled={disabled}
                 onClick={onClick}
                 aria-label="Previous Slide"
@@ -39,7 +38,7 @@ export default function HomepageProperty({site}) {
         return (
             <button
                 type="button"
-                className={"image-gallery-icon image-gallery-right-nav" + ' ' + styles.rightButton}
+                className={"image-gallery-icon image-gallery-right-nav" + ' ' + styles.rightButton + ' ' + (rightSite ? styles.rightButtonForRightSite  : '') }
                 disabled={disabled}
                 onClick={onClick}
                 aria-label="Next Slide"
@@ -48,8 +47,46 @@ export default function HomepageProperty({site}) {
             </button>
         )
     }
-    return (
+    if (rightSite) {
+        return (
+            <div className={styles.overflow}>
+            <Row>
+                <Col xl={6}>
+                    <div className={styles.textSection + ' ' + styles.textSectionRight}>
+                        <Link href={'/s'}>
+                            <a>
+                                <h3 className={styles.title}>
+                                    Prodej novostavby Velký Újezd
+                                </h3>
+                                <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
+                                <div className={styles.arrowAnchor}>
+                                    <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
+                                </div>
 
+                            </a>
+                        </Link>
+
+                    </div>
+                </Col>
+
+                 <Col xl={6}>
+                    <ImageGallery
+                        showFullscreenButton={false}
+                        infinite={false}
+                        showPlayButton={false}
+                        showThumbnails={false}
+                        items={images}
+                        renderLeftNav={(onClick, disabled) => leftNavigation(onClick, disabled)}
+                        renderRightNav={(onClick, disabled) => rightNavigation(onClick, disabled)}
+                    />
+                </Col>
+            </Row>
+            </div>
+        )
+    }
+
+    return (
+     <div className={styles.overflow}>
         <Row>
             <Col xl={6}>
                 <ImageGallery
@@ -71,7 +108,7 @@ export default function HomepageProperty({site}) {
                             </h3>
                             <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
                             <div className={styles.arrowAnchor}>
-                                  <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
+                                <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
                             </div>
 
                         </a>
@@ -80,6 +117,7 @@ export default function HomepageProperty({site}) {
                 </div>
             </Col>
         </Row>
-
+ </div>
     )
+
 }
