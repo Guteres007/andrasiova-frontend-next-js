@@ -28,7 +28,7 @@ export default function Header() {
                         </ActiveLink>
                     </li>
                     <li>
-                        <ActiveLink href={'/ss'}>
+                        <ActiveLink href={'/nabidka-nemovitosti'}>
                             Nabídka nemovitostí
                         </ActiveLink>
                     </li>

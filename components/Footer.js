@@ -128,7 +128,7 @@ export default function Footer() {
                         </Col>
 
                         <Col xl={4}>
-                            <div>
+                            <div className={styles.textRight}>
                                 Developed by Martin Andráši <br/>
                                 UI & UX Michal Brtníček
                             </div>

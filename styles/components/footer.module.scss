@@ -22,8 +22,12 @@
   letter-spacing: normal;
   line-height: normal;
   text-align: left;
+  text-decoration: none;
 }
 
+.textRight {
+  text-align: right;
+}
 .contactSection li:last-child {
   margin-top: 10px;
 }
