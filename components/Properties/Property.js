@@ -1,9 +1,10 @@
 import ImageGallery from 'react-image-gallery';
-import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
+import {faRightLong, faLeftLong, faVideo, faClipboardCheck} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/components/properties/property.module.scss'
 import Link from "next/link";
-export default function Property() {
+
+export default function Property({sold, video}) {
     const images = [
         {
             original: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
@@ -45,9 +46,37 @@ export default function Property() {
         )
     }
 
+    const imageFilter = () => {
+        if (sold) {
+            return (<div className={styles.propertyImageFilter}/>)
+        }
+    }
+
+    const labels = () => {
+        let soldLabel
+        let videoLabel
+        if (sold) {
+            videoLabel = <span className={styles.videoLabel}><FontAwesomeIcon
+                icon={faVideo}/><span>Videoprohlídka</span></span>
+        }
+        if (video) {
+            soldLabel = <span className={styles.soldLabel}><FontAwesomeIcon
+                icon={faClipboardCheck}/><span>Prodáno</span></span>
+        }
+        if (sold || video) {
+            return (
+                <div className={styles.labels}>
+                    {soldLabel}
+                    {videoLabel}
+                </div>
+            )
+        }
+    }
     return (
         <div className={styles.property}>
-            <div>
+            <div className={styles.propertyImage}>
+                {imageFilter()}
+                {labels()}
                 <ImageGallery
                     showFullscreenButton={false}
                     infinite={false}
@@ -60,20 +89,20 @@ export default function Property() {
             </div>
             <div>
                 <div className={styles.textSection}>
-                        <Link href={'/s'}>
-                            <a>
-                                <h3 className={styles.title}>
-                                    Prodej novostavby Velký Újezd
-                                </h3>
-                                <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
-                                <div className={styles.arrowAnchor}>
-                                    <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
-                                </div>
+                    <Link href={'/s'}>
+                        <a>
+                            <h3 className={styles.title}>
+                                Prodej novostavby Velký Újezd
+                            </h3>
+                            <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
+                            <div className={styles.arrowAnchor}>
+                                <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
+                            </div>
 
-                            </a>
-                        </Link>
+                        </a>
+                    </Link>
 
-                    </div>
+                </div>
             </div>
         </div>
 

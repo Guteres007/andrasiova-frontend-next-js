@@ -1,6 +1,7 @@
 .property {
   margin-bottom: 30px;
 }
+
 .leftButton {
   background: white;
   height: 50px;
@@ -10,7 +11,8 @@
   top: auto;
   bottom: 0;
   filter: none;
-  left: 20px;
+  left: auto;
+  right: 90px;
   opacity: 1 !important;
 }
 
@@ -21,20 +23,22 @@
   padding: 0;
   top: auto;
   bottom: 0;
-  right: auto;
-  left: 90px;
+  right: 20px;
+  left: auto;
   filter: none;
   opacity: 1 !important;
 }
 
- .leftButtonForRightSite{
+.leftButtonForRightSite {
   left: auto;
-  right: 90px!important;
+  right: 90px !important;
 }
- .rightButtonForRightSite{
+
+.rightButtonForRightSite {
   left: auto;
-  right: 20px!important;
+  right: 20px !important;
 }
+
 .leftButton svg, .rightButton svg {
   width: 20px;
   height: 19px;
@@ -103,4 +107,65 @@
   height: 19px;
 }
 
+.propertyImage {
+  position: relative;
+}
 
+.propertyImageFilter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(217, 211, 206, 0.71);
+}
+
+.labels {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 2;
+  width: 100%;
+}
+
+.labelBase {
+  padding: 11px 20px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.labelBase:last-child {
+  margin-right: 0;
+}
+
+.soldLabel {
+  @extend .labelBase;
+  background: #fff;
+  color: #9a4c12;
+}
+
+.videoLabel {
+  @extend .labelBase;
+  background: #9a4c12;
+  color: #fff;
+}
+
+.videoLabel svg {
+  width: 22px;
+  height: 19px;
+  color: #fff;
+  margin-right: 13px;
+}
+
+.soldLabel svg {
+  color: #9a4c12;
+  width: 15px;
+  height: 21px;
+  margin-right: 13px;
+}
