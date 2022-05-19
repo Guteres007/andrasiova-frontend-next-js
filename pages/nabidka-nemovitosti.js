@@ -19,17 +19,25 @@ export default function nabidkaNemovitosti() {
                     </Row>
                 </Container>
 
-                <div>
+                <div className={styles.propertiesContainer}>
                     <Container>
                         <Row>
-                            <Col>
+                            <Col xl={6}>
                                   <Property/>
-
+                            </Col>
+                            <Col xl={6}>
+                                  <Property/>
+                            </Col>
+                            <Col xl={6}>
+                                  <Property/>
+                            </Col>
+                            <Col xl={6}>
+                                  <Property/>
                             </Col>
                         </Row>
                     </Container>
                 </div>
-
+                <hr className={styles.hrWhite}/>
             </div>
         </BaseLayout>
     )

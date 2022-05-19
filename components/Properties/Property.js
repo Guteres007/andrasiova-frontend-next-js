@@ -2,7 +2,7 @@ import ImageGallery from 'react-image-gallery';
 import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/components/properties/property.module.scss'
-
+import Link from "next/link";
 export default function Property() {
     const images = [
         {
@@ -46,7 +46,7 @@ export default function Property() {
     }
 
     return (
-        <div>
+        <div className={styles.property}>
             <div>
                 <ImageGallery
                     showFullscreenButton={false}
@@ -59,7 +59,21 @@ export default function Property() {
                 />
             </div>
             <div>
-                description
+                <div className={styles.textSection}>
+                        <Link href={'/s'}>
+                            <a>
+                                <h3 className={styles.title}>
+                                    Prodej novostavby Velký Újezd
+                                </h3>
+                                <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
+                                <div className={styles.arrowAnchor}>
+                                    <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
+                                </div>
+
+                            </a>
+                        </Link>
+
+                    </div>
             </div>
         </div>
 
