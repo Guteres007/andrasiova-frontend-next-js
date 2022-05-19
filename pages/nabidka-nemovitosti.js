@@ -55,13 +55,13 @@ export default function nabidkaNemovitosti() {
                         <Container>
                             <Row>
                                 <Col xl={6}>
-                                    <Property/>
+                                    <Property sold={true}/>
                                 </Col>
                                 <Col xl={6}>
-                                    <Property/>
+                                    <Property video={true} sold={true}/>
                                 </Col>
                                 <Col xl={6}>
-                                    <Property video={true}/>
+                                    <Property sold={true} video={true}/>
                                 </Col>
                                 <Col xl={6}>
                                     <Property sold={true}/>

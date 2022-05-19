@@ -55,11 +55,11 @@ export default function Property({sold, video}) {
     const labels = () => {
         let soldLabel
         let videoLabel
-        if (sold) {
+        if (video) {
             videoLabel = <span className={styles.videoLabel}><FontAwesomeIcon
                 icon={faVideo}/><span>Videoprohlídka</span></span>
         }
-        if (video) {
+        if (sold) {
             soldLabel = <span className={styles.soldLabel}><FontAwesomeIcon
                 icon={faClipboardCheck}/><span>Prodáno</span></span>
         }
