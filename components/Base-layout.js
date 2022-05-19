@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Header from "./Header";
+import Footer from "./Footer";
 
 export default function BaseLayout({ children }) {
   return (
@@ -9,6 +10,7 @@ export default function BaseLayout({ children }) {
       </Head>
          <Header/>
          {children}
+        <Footer/>
       </>
   )
 }

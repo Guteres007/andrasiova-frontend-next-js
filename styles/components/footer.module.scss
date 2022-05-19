@@ -1,0 +1,105 @@
+.footer {
+  background: black;
+}
+
+.ctaSection {
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.contactSection {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 30px;
+}
+
+.contactSection a {
+  font-family: "Oswald", sans-serif;
+  color: #fff;
+  font-size: 33px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  text-align: left;
+}
+
+.contactSection li:last-child {
+  margin-top: 10px;
+}
+
+.contactSection a span {
+  margin-left: 26px;
+}
+
+.title {
+  height: 139px;
+  color: #9a4c12;
+  font-family: "Oswald", sans-serif;
+  font-size: 58px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 69px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.linkSection {
+  padding: 55px 0 45px 0;
+  background: #0d0d0d;
+  border-top: #252321;
+  border-bottom: #252321;
+}
+
+.linkSection ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+}
+
+.linkSection li {
+  margin-right: 60px;
+}
+
+.linkSection li:last-child {
+  margin-right: 0;
+}
+
+.linkSection a {
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.6px;
+  line-height: 48px;
+  text-align: right;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.linkSection a:hover {
+  color: #9a4c12;
+}
+
+.rights {
+  padding: 100px 0 80px 0;
+  color: #fff;
+}
+
+.social {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+}
+.social li {
+  margin: 11px;
+}
+
+.social svg {
+  width: 31px;
+  height: 27px;;
+}
