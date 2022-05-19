@@ -7,6 +7,7 @@ import signature from '../public/podpis.png'
 import Title from "../components/Title";
 import HomepageProperty from "../components/Properties/HomepageProperty";
 import Button from "../components/Button";
+import HowIWork from "../components/HowIWork";
 
 export default function Home() {
     return (
@@ -84,14 +85,21 @@ export default function Home() {
 
                 <Container>
                     <Row>
-                       <Col>
-                            <Button >
+                       <Col className={'text-center'}>
+                            <Button>
                                 Zobrazit celou nabídku
                             </Button>
                         </Col>
                 </Row>
                     </Container>
             </div>
+
+
+            <HowIWork/>
+
+
+
+
         </BaseLayout>
     )
 }

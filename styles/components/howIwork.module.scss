@@ -1,0 +1,64 @@
+.section {
+    padding: 130px 0;
+}
+.items {
+    margin-top: 85px;
+}
+.item {
+    padding-top: 95px;
+}
+
+.title {
+    position: relative;
+    z-index: 1;
+    color: #000000;
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    text-transform: uppercase;
+}
+
+.titleBaseStyle {
+    color: #f4e7de;
+    font-family: "Oswald", sans-serif;
+    font-size: 167px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 135px;
+    text-align: left;
+    text-transform: uppercase;
+    position: absolute;
+    top: -103px;
+    left: -15px;
+}
+
+.titleOne:before {
+    @extend .titleBaseStyle;
+    content: '1.';
+    z-index: -1;
+    display: block;
+}
+
+.titleTwo:before {
+    @extend .titleBaseStyle;
+    content: '2.';
+    z-index: -1;
+    display: block;
+}
+.titleThree:before {
+    @extend .titleBaseStyle;
+    content: '3.';
+    z-index: -1;
+    display: block;
+}
+.titleFour:before {
+    @extend .titleBaseStyle;
+    content: '4.';
+    z-index: -1;
+    display: block;
+}
+.description {
+    margin-top: 24px;
+}
