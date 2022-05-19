@@ -8,6 +8,7 @@ import Title from "../components/Title";
 import HomepageProperty from "../components/Properties/HomepageProperty";
 import Button from "../components/Button";
 import HowIWork from "../components/HowIWork";
+import HomepageTestimonial from "../components/HomepageTestimonial";
 
 export default function Home() {
     return (
@@ -18,35 +19,36 @@ export default function Home() {
                         <Row>
                             <Col sm={4}>
                                 <div className={styles.mainHeaderPadding}>
-                                      <h1 className={styles.mainHeader}>
+                                    <h1 className={styles.mainHeader}>
                                        <span>
                                            <span className={styles.textUnderline}>Dostaňte</span> za vaši nemovitost více
                                        </span>
-                                </h1>
+                                    </h1>
                                 </div>
                                 <div className={styles.jumbotronParagraphSection}>
-                                       <p>
-                                        Často se mými přáteli stávají právě klienti, kterým prodávám nemovitost a <strong>pomohu jim tak najít nový domov.</strong>
-                                       </p>
+                                    <p>
+                                        Často se mými přáteli stávají právě klienti, kterým prodávám nemovitost
+                                        a <strong>pomohu jim tak najít nový domov.</strong>
+                                    </p>
 
                                     <p className={styles.signature}>
-                                      <Image src={signature}/>
+                                        <Image src={signature}/>
                                     </p>
                                 </div>
 
-                            <div className={styles.counter}>
-                                <strong className={styles.number}>
-                                    700+
-                                </strong>
-                                <span className={styles.text}>Prodaných nemovitostí</span>
-                            </div>
+                                <div className={styles.counter}>
+                                    <strong className={styles.number}>
+                                        700+
+                                    </strong>
+                                    <span className={styles.text}>Prodaných nemovitostí</span>
+                                </div>
 
 
                             </Col>
                             <Col sm={8}>
                                 <div className={styles.coverImage}>
                                     <p>
-                                           <Image src={coverImage}/>
+                                        <Image src={coverImage}/>
                                     </p>
 
                                 </div>
@@ -57,6 +59,7 @@ export default function Home() {
                 </Row>
             </Container>
 
+            {/* Componenta Aktuální nabídka */}
             <div className={styles.sectionOffer}>
                 <Container>
                     <Row>
@@ -73,9 +76,9 @@ export default function Home() {
                         <Col xl={12}>
                             <div className={styles.offers}>
 
-                                     <HomepageProperty/>
-                                     <HomepageProperty rightSite={true}/>
-                                     <HomepageProperty/>
+                                <HomepageProperty/>
+                                <HomepageProperty rightSite={true}/>
+                                <HomepageProperty/>
 
                             </div>
                         </Col>
@@ -85,19 +88,19 @@ export default function Home() {
 
                 <Container>
                     <Row>
-                       <Col className={'text-center'}>
+                        <Col className={'text-center'}>
                             <Button>
                                 Zobrazit celou nabídku
                             </Button>
                         </Col>
-                </Row>
-                    </Container>
+                    </Row>
+                </Container>
             </div>
 
-
+            {/* Componenta Jak pracuji */}
             <HowIWork/>
-
-
+            {/* Componenta Reference */}
+            <HomepageTestimonial/>
 
 
         </BaseLayout>
