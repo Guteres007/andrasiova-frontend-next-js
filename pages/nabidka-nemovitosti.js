@@ -2,7 +2,10 @@ import BaseLayout from "../components/Base-layout";
 import styles from './../styles/pages/property.module.scss'
 import {Container, Row, Col} from "react-bootstrap";
 import Title from "../components/Title";
+import Property from "../components/Properties/Property";
+
 export default function nabidkaNemovitosti() {
+
     return(
         <BaseLayout>
             <div className={styles.propertySection}>
@@ -20,14 +23,8 @@ export default function nabidkaNemovitosti() {
                     <Container>
                         <Row>
                             <Col>
-                                <div>
-                                    <div>
-                                        Image
-                                    </div>
-                                    <div>
-                                        description
-                                    </div>
-                                </div>
+                                  <Property/>
+
                             </Col>
                         </Row>
                     </Container>
