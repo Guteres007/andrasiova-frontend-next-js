@@ -3,43 +3,48 @@ import {faRightLong, faLeftLong, faVideo, faClipboardCheck} from "@fortawesome/f
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/components/properties/property.module.scss'
 import Link from "next/link";
+import {useEffect, useState} from "react";
+import {APP_URL} from "../../globals";
 
-export default function Property({sold, video}) {
-
-    {/* zatím nechat, ale asi se bude dávat jen na detail nemovitosti */}
-    const renderVideo = (item) => {
-        return (
-            <div>
-                {
-                    item.original ?
-                        <iframe width="560" height="315" src={item.original}
-                                title="YouTube video player" frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen/>
+const renderVideo = (item) => {
+    return (
+        <div>
+            {
+                item.original ?
+                    <iframe width="560" height="315" src={item.original}
+                            title="YouTube video player" frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowFullScreen/>
                     :
                     null
-                }
-            </div>
-        );
+            }
+        </div>
+    );
+}
+
+export default function Property({sold, video, data}) {
+
+    const [property, setProperty] = useState('')
+    const [images, setImages] = useState([])
+    useEffect(() => {
+        setProperty(data)
+        const imgs = data.attributes.images.data.map((image) => {
+          /*  {
+                original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
+                renderItem: renderVideo,
+            },
+           */
+            return {
+                original: APP_URL + image.attributes.url,
+                thumbnail: APP_URL + image.attributes.url
+            }
+        })
+        setImages(imgs)
+    }, [])
+    {/* zatím nechat, ale asi se bude dávat jen na detail nemovitosti */
     }
 
-    const images = [
-        {
-            original: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
-            thumbnail: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
-        },
-        {
-            original: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
-            thumbnail: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
-        },
-        {
-            original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
-            renderItem: renderVideo,
-        },
-    ];
-
     let leftNavigation = (onClick, disabled) => {
-
         return (
             <button
                 type="button"
@@ -113,9 +118,9 @@ export default function Property({sold, video}) {
                     <Link href={'/s'}>
                         <a>
                             <h3 className={styles.title}>
-                                Prodej novostavby Velký Újezd
+                                {property?.attributes?.title}
                             </h3>
-                            <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
+                            <p className={styles.params}>{property?.attributes?.description}</p>
                             <div className={styles.arrowAnchor}>
                                 <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
                             </div>
@@ -126,6 +131,5 @@ export default function Property({sold, video}) {
                 </div>
             </div>
         </div>
-
     )
 }

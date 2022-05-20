@@ -4,8 +4,17 @@ import {Container, Row, Col} from "react-bootstrap";
 import Title from "../components/Title";
 import Property from "../components/Properties/Property";
 import Button from './../components/Button'
+import {useEffect, useState} from "react";
+import axios from "axios";
 
-export default function nabidkaNemovitosti() {
+// This gets called on every request
+export async function getServerSideProps() {
+    // Fetch data from external API
+    let properties = await axios.get('http://localhost:1337/api/properties?populate=%2A')
+    return {props: {properties: properties.data.data}}
+}
+
+export default function nabidkaNemovitosti({properties}) {
 
     return (
         <BaseLayout>
@@ -23,18 +32,13 @@ export default function nabidkaNemovitosti() {
                 <div className={styles.propertiesContainer}>
                     <Container>
                         <Row>
-                            <Col xl={6}>
-                                <Property/>
-                            </Col>
-                            <Col xl={6}>
-                                <Property/>
-                            </Col>
-                            <Col xl={6}>
-                                <Property/>
-                            </Col>
-                            <Col xl={6}>
-                                <Property/>
-                            </Col>
+                            <div> {properties.map(((property, index) => {
+                                return (<Col key={index}  xl={6}>
+                                    <Property data={property}/>
+                                </Col>)
+                            }))}</div>
+
+
                         </Row>
                     </Container>
                 </div>
@@ -54,18 +58,11 @@ export default function nabidkaNemovitosti() {
                     <div className={styles.soldedPropertiesContainer}>
                         <Container>
                             <Row>
-                                <Col xl={6}>
-                                    <Property sold={true}/>
-                                </Col>
-                                <Col xl={6}>
-                                    <Property video={true} sold={true}/>
-                                </Col>
-                                <Col xl={6}>
-                                    <Property sold={true} video={true}/>
-                                </Col>
-                                <Col xl={6}>
-                                    <Property sold={true}/>
-                                </Col>
+                             <div> {properties.map(((property, index) => {
+                                return (<Col key={index} xl={6}>
+                                    <Property  data={property}/>
+                                </Col>)
+                            }))}</div>
                             </Row>
                         </Container>
                     </div>
