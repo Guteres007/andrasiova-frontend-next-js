@@ -1,5 +1,5 @@
 import BaseLayout from "../components/Base-layout";
-import styles from './../styles/pages/property.module.scss'
+import styles from '../styles/pages/properties.module.scss'
 import {Container, Row, Col} from "react-bootstrap";
 import Title from "../components/Title";
 import Property from "../components/Properties/Property";
