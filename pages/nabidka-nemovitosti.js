@@ -32,11 +32,11 @@ export default function nabidkaNemovitosti({properties}) {
                 <div className={styles.propertiesContainer}>
                     <Container>
                         <Row>
-                            <div> {properties.map(((property, index) => {
+                             {properties.map(((property, index) => {
                                 return (<Col key={index}  xl={6}>
                                     <Property data={property}/>
                                 </Col>)
-                            }))}</div>
+                            }))}
 
 
                         </Row>
@@ -58,11 +58,11 @@ export default function nabidkaNemovitosti({properties}) {
                     <div className={styles.soldedPropertiesContainer}>
                         <Container>
                             <Row>
-                             <div> {properties.map(((property, index) => {
+                              {properties.map(((property, index) => {
                                 return (<Col key={index} xl={6}>
                                     <Property  data={property}/>
                                 </Col>)
-                            }))}</div>
+                            }))}
                             </Row>
                         </Container>
                     </div>
