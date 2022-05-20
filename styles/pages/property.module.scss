@@ -1,25 +1,65 @@
-.propertySection {
-  padding: 100px 0 115px 0;
-  background: #f4e7de;
+
+.leftButton {
+  background: white;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  box-shadow: none;
+  top: auto;
+  bottom: 0;
+  filter: none;
+  left: auto;
+  right: 90px;
+  opacity: 1 !important;
 }
-.propertiesContainer {
-  padding-top: 90px;
-  padding-bottom: 60px;
+
+.rightButton {
+  background: white;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  top: auto;
+  bottom: 0;
+  right: 20px;
+  left: auto;
+  filter: none;
+  opacity: 1 !important;
 }
-.hrWhite {
-  background: #fff;
-  border: 0;
-  height: 1px!important;
-  opacity: 1;
+
+.leftButton svg, .rightButton svg {
+  width: 20px;
+  height: 19px;
 }
-.soldedProperties {
-  margin-top: 100px;
+
+.arrowAnchor {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  text-align: right;
 }
-.soldedPropertiesContainer {
-  margin-top: 90px;
-  padding-bottom: 80px;
+
+.arrowAnchor svg {
+  width: 20px;
+  height: 19px;
 }
-.textCenter {
-  text-align: center;
+
+.arrowAnchor {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  text-align: right;
 }
+
+.arrowAnchor svg {
+  width: 20px;
+  height: 19px;
+}
+
+.propertyImage {
+  position: relative;
+}
+
+
+
+
 
