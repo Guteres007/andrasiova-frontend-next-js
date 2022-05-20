@@ -5,6 +5,24 @@ import styles from './../../styles/components/properties/property.module.scss'
 import Link from "next/link";
 
 export default function Property({sold, video}) {
+
+    {/* zatím nechat, ale asi se bude dávat jen na detail nemovitosti */}
+    const renderVideo = (item) => {
+        return (
+            <div>
+                {
+                    item.original ?
+                        <iframe width="560" height="315" src={item.original}
+                                title="YouTube video player" frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen/>
+                    :
+                    null
+                }
+            </div>
+        );
+    }
+
     const images = [
         {
             original: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
@@ -14,7 +32,10 @@ export default function Property({sold, video}) {
             original: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
             thumbnail: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
         },
-
+        {
+            original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
+            renderItem: renderVideo,
+        },
     ];
 
     let leftNavigation = (onClick, disabled) => {
