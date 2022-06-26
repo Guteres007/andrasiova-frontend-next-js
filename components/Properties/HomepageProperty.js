@@ -5,7 +5,7 @@ import Link from "next/link";
 import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-export default function HomepageProperty({rightSite}) {
+export default function HomepageProperty({rightSite, data}) {
 
     const images = [
         {
@@ -53,10 +53,10 @@ export default function HomepageProperty({rightSite}) {
             <Row>
                 <Col xl={6}>
                     <div className={styles.textSection + ' ' + styles.textSectionRight}>
-                        <Link href={'/s'}>
+                        <Link href={'/nemovitost/' + data.slugs[0].slug}>
                             <a>
                                 <h3 className={styles.title}>
-                                    Prodej novostavby Velký Újezd
+                                    {data.title}
                                 </h3>
                                 <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
                                 <div className={styles.arrowAnchor}>
@@ -101,10 +101,10 @@ export default function HomepageProperty({rightSite}) {
             </Col>
             <Col xl={6}>
                 <div className={styles.textSection}>
-                    <Link href={'/s'}>
+                     <Link href={'/nemovitost/' + data.slugs[0].slug}>
                         <a>
                             <h3 className={styles.title}>
-                                Prodej novostavby Velký Újezd
+                                {data.title}
                             </h3>
                             <p className={styles.params}>4+kk, 100 m², pozemek 1 488 m²</p>
                             <div className={styles.arrowAnchor}>

@@ -1,1 +1,1 @@
-export const APP_URL = 'http://localhost:1337'
+export const APP_URL = 'http://admin-mamka.test'

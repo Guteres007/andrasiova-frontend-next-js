@@ -4,14 +4,14 @@ import {Container, Row, Col} from "react-bootstrap";
 import Title from "../components/Title";
 import Property from "../components/Properties/Property";
 import Button from './../components/Button'
-import {useEffect, useState} from "react";
-import axios from "axios";
+import Api from "../db/api";
 
 // This gets called on every request
 export async function getServerSideProps() {
     // Fetch data from external API
-    let properties = await axios.get('http://localhost:1337/api/properties?populate=%2A')
-    return {props: {properties: properties.data.data}}
+
+    let properties = await Api.get( '/nemovitosti')
+    return {props: {properties: properties.data}}
 }
 
 export default function nabidkaNemovitosti({properties}) {

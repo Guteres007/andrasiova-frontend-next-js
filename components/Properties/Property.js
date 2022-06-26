@@ -24,20 +24,23 @@ const renderVideo = (item) => {
 
 export default function Property({sold, video, data}) {
 
-    const [property, setProperty] = useState('')
+    const [property, setProperty] = useState(data)
     const [images, setImages] = useState([])
     useEffect(() => {
-        setProperty(data)
-        const imgs = data.attributes.images.data.map((image) => {
+
+        const imgs = data.medias.filter(image => image.pivot.crop === "default" ).map((image) => {
           /*  {
                 original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
                 renderItem: renderVideo,
             },
            */
-            return {
-                original: APP_URL + image.attributes.url,
-                thumbnail: APP_URL + image.attributes.url
+
+                return {
+                original: APP_URL + "/storage/uploads/" +image.uuid,
+                thumbnail: APP_URL + "/storage/uploads/" + image.uuid
+
             }
+
         })
         setImages(imgs)
     }, [])
@@ -115,12 +118,12 @@ export default function Property({sold, video, data}) {
             </div>
             <div>
                 <div className={styles.textSection}>
-                    <Link href={'/s'}>
+                    <Link href={'/nemovitost/'+ property?.slugs[0].slug}>
                         <a>
                             <h3 className={styles.title}>
-                                {property?.attributes?.title}
+                                {property?.title}
                             </h3>
-                            <p className={styles.params}>{property?.attributes?.description}</p>
+                            <p className={styles.params}>{property?.short_description}</p>
                             <div className={styles.arrowAnchor}>
                                 <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
                             </div>

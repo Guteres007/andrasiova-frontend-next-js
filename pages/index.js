@@ -9,8 +9,16 @@ import HomepageProperty from "../components/Properties/HomepageProperty";
 import Button from "../components/Button";
 import HowIWork from "../components/HowIWork";
 import HomepageTestimonial from "../components/HomepageTestimonial";
+import Api from "../db/api";
+// This gets called on every request
+export async function getServerSideProps() {
+    // Fetch data from external API
 
-export default function Home() {
+    let properties = await Api.get( '/nemovitosti')
+    return {props: {properties: properties.data}}
+}
+
+export default function Home({properties}) {
     return (
         <BaseLayout>
             <Container className={styles.jumbotron}>
@@ -75,10 +83,12 @@ export default function Home() {
                     <Row>
                         <Col xl={12}>
                             <div className={styles.offers}>
-
-                                <HomepageProperty/>
-                                <HomepageProperty rightSite={true}/>
-                                <HomepageProperty/>
+                                {properties.map(function (property, index ) {
+                                    let isOdd = (index % 2 !== 0)
+                                    return (
+                                        <HomepageProperty data={property} rightSite={isOdd}/>
+                                    )
+                                })}
 
                             </div>
                         </Col>
