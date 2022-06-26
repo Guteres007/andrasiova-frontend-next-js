@@ -9,6 +9,11 @@ export default function Title({children, color, dotsColor}) {
     if (dotsColor === 'orange') {
        dotColor = styles.dotsOrange
     }
+
+    if (dotsColor === 'super-orange') {
+       dotColor = styles.dotsSuperOrange
+    }
+
         return (
             <div className={styles.textCenter}>
                 <h2 className={titleBase + ' ' + titleColor + ' ' + dotColor}>

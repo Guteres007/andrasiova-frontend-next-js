@@ -60,6 +60,92 @@
 }
 
 
+.leftSite {
+  padding-top: 120px;
+  padding-bottom: 130px;
+}
 
+.leftSite p, .leftSite strong, .leftSite i {
+  font-family: "Roboto", sans-serif;
+  font-size: 26px;
+  line-height: 41px;
+}
 
+.leftSite p, .leftSite p + p {
+  margin-bottom: 48px;
+}
 
+.leftSite p:last-of-type {
+  margin-bottom: 0;
+}
+
+.rightSite {
+  padding: 120px 50px 130px;
+  background: #f4e7de;
+  height: 100%;
+}
+
+.rightSite ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.rightSite ul li {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 40px;
+  margin-bottom: 25px;
+}
+
+.rightSite ul li:last-child {
+  margin-bottom: 0;
+}
+
+.rightSite ul li span {
+  color: #9a4c12;
+  font-family: "Oswald", sans-serif;
+  font-size: 26px;
+
+}
+
+.rightSite ul li p {
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  text-align: right;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+.contactMe {
+  position: relative;
+  background: #a25a25;
+}
+
+.contactMe .imageSection {
+  background: #9a4c12;
+  height: 100%;
+}
+
+.contactMe .image {
+  position: absolute !important;
+  bottom: -120px !important;
+  padding-left: 50px;
+}
+
+.contactMe .title {
+  position: absolute;
+  top: 90px;
+  height: 83px;
+  width: 100%;
+}
+
+.contactMe .contactSection {
+  padding-top: 230px;
+  padding-bottom: 90px;
+}
+
+.propertySection {
+  background: #f4e7de;
+  padding-top: 90px;
+  padding-bottom: 90px;
+}

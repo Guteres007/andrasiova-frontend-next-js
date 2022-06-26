@@ -5,7 +5,13 @@ import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/pages/property.module.scss'
 import Link from "next/link";
-import {Container} from "react-bootstrap";
+import Image from "next/image";
+import andrasiova from './../../public/andrasiova-kontaktni-foto.png'
+
+
+import {Container, Row, Col} from "react-bootstrap";
+import Button from "../../components/Button";
+import Title from "../../components/Title";
 
 
 export default function PropertyPage() {
@@ -76,20 +82,168 @@ export default function PropertyPage() {
     return (
         <BaseLayout>
             <Container>
-                    <div className={'property-carousel'}>
+                <Row>
+                    <Col xl={12}>
 
-            <ImageGallery
-                showFullscreenButton={false}
-                infinite={false}
-                showPlayButton={false}
-                showThumbnails={false}
-                items={images}
-                renderLeftNav={(onClick, disabled) => leftNavigation(onClick, disabled)}
-                renderRightNav={(onClick, disabled) => rightNavigation(onClick, disabled)}
-            />
 
-                   </div>
+                        <div className={'property-carousel'}>
+                            <ImageGallery
+                                showFullscreenButton={false}
+                                infinite={false}
+                                showPlayButton={false}
+                                showThumbnails={false}
+                                items={images}
+                                renderLeftNav={(onClick, disabled) => leftNavigation(onClick, disabled)}
+                                renderRightNav={(onClick, disabled) => rightNavigation(onClick, disabled)}
+                            />
+
+                        </div>
+                    </Col>
+                </Row>
             </Container>
+
+            <Container>
+                <Row>
+                    <Col xl={7}>
+                        <div className={styles.leftSite}>
+                            <p><strong>Hledáte bydlení v dobré dojezdnosti od Olomouce? Mám tu pro vás nabídku - pozemek
+                                o
+                                výměře 1488m2 zajišťující soukromí a samostatně stojící novostavbu postavenou na klíč ve
+                                Velkém Újezdu. Čtyři pokoje v přízemí. To je základní myšlenka tohoto domu. Nabízí
+                                komfort přízemního domu.</strong>
+                            </p>
+                            <p>
+                                Dům proto vyhovuje širokému spektru zájemců pro začínající rodiny i seniory. Vzhledem k
+                                tomu, že se zatím jedná o vizualizaci, lze dům postavit dle vlastních představ jak
+                                přízemní bungalov, tak patrový. Vzory domů vč. nacenění přepošlu na požádání.</p>
+                            <p>
+                                Poloha je ideální z hlediska blízkosti větších měst s možností rychlého napojení na
+                                dálnici. Olomouc 15 km, Přerov, Hranice přes 20 km. V místě pošta, obchody, základní a
+                                mateřská škola, lékař, penzion, restaurace apod. Bohatý kulturní život obce, sportovní a
+                                rekreační vyžití.</p>
+                            <p>
+                                Zajistíme výhodné financování hypotečním úvěrem. Pro zajištění financování jsme
+                                připraveni rychle a výhodně prodat vaši stávající nemovitost. Pro bližší informace mne
+                                kontaktujte.</p>
+                        </div>
+
+                    </Col>
+                    <Col xl={5}>
+                        <div className={styles.rightSite}>
+                            <ul>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                                <li>
+                                    <span>
+                                        Dispozice
+                                    </span>
+                                    <p>
+                                        4+kk
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+
+            <div className={styles.contactMe}>
+                <div className={styles.title}>
+                    <Title color={'white'} dotsColor={'super-orange'}>
+                        Domluvte si prohlídku
+                    </Title>
+                </div>
+
+                <Container>
+                    <Row>
+                        <Col xl={7}>
+                            <Col xl={10}>
+                                <div className={styles.contactSection}>
+                                    <Row>
+                                        <Col xl={6}>
+                                            <input className={'input'} type="email" placeholder={'Email'}/>
+                                        </Col>
+                                        <Col xl={6}>
+                                            <input className={'input'} type="tel" placeholder={'Telefon'}/>
+                                        </Col>
+                                        <Col xl={12}>
+                                            <textarea className={'textarea'} placeholder={'Zpráva'}/>
+                                        </Col>
+                                        <Col>
+                                            <Button>
+                                                Odeslat
+                                            </Button>
+                                        </Col>
+
+                                    </Row>
+                                </div>
+
+                            </Col>
+                        </Col>
+                        <Col xl={5}>
+                            <div className={styles.imageSection}>
+                                <div className={styles.image}>
+                                    <Image src={andrasiova} alt={'andrasiova'}/>
+                                </div>
+
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
+
+            <div className={styles.propertySection}>
+                  <Title color={'black'} dotsColor={'white'}>
+                       Další nemovitosti
+                    </Title>
+            </div>
 
         </BaseLayout>
     )
