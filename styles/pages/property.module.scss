@@ -119,6 +119,7 @@
 .contactMe {
   position: relative;
   background: #a25a25;
+  overflow-x: clip;
 }
 
 .contactMe .imageSection {
@@ -148,4 +149,16 @@
   background: #f4e7de;
   padding-top: 90px;
   padding-bottom: 90px;
+}
+.relatedProperties {
+  margin-top: 95px;
+}
+.relatedPropertiesButton {
+  text-align: center;
+  margin-top: 90px;
+}
+.okkk {
+  background: #9a4c12;
+  height: 100%;
+  width: 100vw;
 }

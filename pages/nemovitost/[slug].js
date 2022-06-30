@@ -12,9 +12,17 @@ import andrasiova from './../../public/andrasiova-kontaktni-foto.png'
 import {Container, Row, Col} from "react-bootstrap";
 import Button from "../../components/Button";
 import Title from "../../components/Title";
+import Property from "../../components/Properties/Property";
+import Api from "../../db/api";
 
+export async function getServerSideProps() {
+    // Fetch data from external API
 
-export default function PropertyPage() {
+    let nextProperties = await Api.get('/nemovitosti')
+    return {props: {nextProperties: nextProperties.data}}
+}
+
+export default function PropertyPage({nextProperties}) {
     const router = useRouter()
     const {slug} = router.query
 
@@ -96,7 +104,9 @@ export default function PropertyPage() {
                                 renderLeftNav={(onClick, disabled) => leftNavigation(onClick, disabled)}
                                 renderRightNav={(onClick, disabled) => rightNavigation(onClick, disabled)}
                             />
-
+                            <h1>
+                                Title a rozmazaný bavckground
+                            </h1>
                         </div>
                     </Col>
                 </Row>
@@ -228,6 +238,8 @@ export default function PropertyPage() {
                         </Col>
                         <Col xl={5}>
                             <div className={styles.imageSection}>
+                                <div className={styles.okkk}>
+                                </div>
                                 <div className={styles.image}>
                                     <Image src={andrasiova} alt={'andrasiova'}/>
                                 </div>
@@ -240,9 +252,28 @@ export default function PropertyPage() {
 
 
             <div className={styles.propertySection}>
-                  <Title color={'black'} dotsColor={'white'}>
-                       Další nemovitosti
-                    </Title>
+                <Title color={'black'} dotsColor={'white'}>
+                    Další nemovitosti
+                </Title>
+                <div className={styles.relatedProperties}>
+                    <Container>
+                        <Row>
+                            {nextProperties.map((property) => {
+                                return (
+                                    <Col xl={6} key={property.id} >
+                                        <Property  data={property} sold={false} video={false}/>
+                                    </Col>)
+                            })}
+
+                             <Col xl={12} className={styles.relatedPropertiesButton} >
+                                        <Button>
+                                Načíst další nemovitosti
+                            </Button>
+                                    </Col>
+                        </Row>
+
+                    </Container>
+                </div>
             </div>
 
         </BaseLayout>
