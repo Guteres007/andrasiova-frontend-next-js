@@ -38,7 +38,6 @@ export default function nabidkaNemovitosti({properties}) {
                                 </Col>)
                             }))}
 
-
                         </Row>
                     </Container>
                 </div>

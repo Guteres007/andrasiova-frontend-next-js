@@ -14,17 +14,29 @@ import Button from "../../components/Button";
 import Title from "../../components/Title";
 import Property from "../../components/Properties/Property";
 import Api from "../../db/api";
+import {APP_URL} from "../../globals";
 
-export async function getServerSideProps() {
-    // Fetch data from external API
+export async function getServerSideProps(context) {
+    const {slug} = context.query;
+    let property = await Api.get('/nemovitosti/' + slug)
+    const coverImage = property.data.medias.filter(image => image.pivot.role === "cover" && image.pivot.crop === "default")[0]
+    const images = property.data.medias.filter(image => image.pivot.crop === "default").map((image) => {
+        /*  {
+              original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
+              renderItem: renderVideo,
+          },
+         */
 
+        return {
+            original: APP_URL + "/storage/uploads/" + image.uuid,
+            thumbnail: APP_URL + "/storage/uploads/" + image.uuid
+        }
+    })
     let nextProperties = await Api.get('/nemovitosti')
-    return {props: {nextProperties: nextProperties.data}}
+    return {props: {nextProperties: nextProperties.data, property: property.data, images, coverImage}}
 }
 
-export default function PropertyPage({nextProperties}) {
-    const router = useRouter()
-    const {slug} = router.query
+export default function PropertyPage({nextProperties, property, images, coverImage}) {
 
     const renderVideo = (item) => {
         return (
@@ -42,20 +54,6 @@ export default function PropertyPage({nextProperties}) {
         );
     }
 
-    const images = [
-        {
-            original: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
-            thumbnail: 'https://andrasiova.cz/nemovitost/93/91701647416211.jpg',
-        },
-        {
-            original: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
-            thumbnail: 'https://andrasiova.cz/nemovitost/93/58261647415826.jpg',
-        },
-        {
-            original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
-            renderItem: renderVideo,
-        },
-    ];
 
     let leftNavigation = (onClick, disabled) => {
 
@@ -89,52 +87,34 @@ export default function PropertyPage({nextProperties}) {
 
     return (
         <BaseLayout>
+            <div className={styles.coverImage} style={{backgroundImage: "url(" +  APP_URL + '/storage/uploads/' + coverImage.uuid + "), linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9))",  backgroundBlendMode: 'overlay'}}>
             <Container>
                 <Row>
                     <Col xl={12}>
-
-
                         <div className={'property-carousel'}>
                             <ImageGallery
                                 showFullscreenButton={false}
                                 infinite={false}
                                 showPlayButton={false}
                                 showThumbnails={false}
+                                renderCustomControls={() => {
+                                    return (<div className={styles.propertyTitle}><h1 className={styles.propertyH1}>{property.title}</h1></div>)
+                                }}
                                 items={images}
                                 renderLeftNav={(onClick, disabled) => leftNavigation(onClick, disabled)}
                                 renderRightNav={(onClick, disabled) => rightNavigation(onClick, disabled)}
                             />
-                            <h1>
-                                Title a rozmazaný bavckground
-                            </h1>
                         </div>
                     </Col>
                 </Row>
             </Container>
+            </div>
+
 
             <Container>
                 <Row>
                     <Col xl={7}>
-                        <div className={styles.leftSite}>
-                            <p><strong>Hledáte bydlení v dobré dojezdnosti od Olomouce? Mám tu pro vás nabídku - pozemek
-                                o
-                                výměře 1488m2 zajišťující soukromí a samostatně stojící novostavbu postavenou na klíč ve
-                                Velkém Újezdu. Čtyři pokoje v přízemí. To je základní myšlenka tohoto domu. Nabízí
-                                komfort přízemního domu.</strong>
-                            </p>
-                            <p>
-                                Dům proto vyhovuje širokému spektru zájemců pro začínající rodiny i seniory. Vzhledem k
-                                tomu, že se zatím jedná o vizualizaci, lze dům postavit dle vlastních představ jak
-                                přízemní bungalov, tak patrový. Vzory domů vč. nacenění přepošlu na požádání.</p>
-                            <p>
-                                Poloha je ideální z hlediska blízkosti větších měst s možností rychlého napojení na
-                                dálnici. Olomouc 15 km, Přerov, Hranice přes 20 km. V místě pošta, obchody, základní a
-                                mateřská škola, lékař, penzion, restaurace apod. Bohatý kulturní život obce, sportovní a
-                                rekreační vyžití.</p>
-                            <p>
-                                Zajistíme výhodné financování hypotečním úvěrem. Pro zajištění financování jsme
-                                připraveni rychle a výhodně prodat vaši stávající nemovitost. Pro bližší informace mne
-                                kontaktujte.</p>
+                        <div className={styles.leftSite} dangerouslySetInnerHTML={{__html: property.description}}>
                         </div>
 
                     </Col>
@@ -238,7 +218,7 @@ export default function PropertyPage({nextProperties}) {
                         </Col>
                         <Col xl={5}>
                             <div className={styles.imageSection}>
-                                <div className={styles.okkk}>
+                                <div className={styles.rightBackgroundOffset}>
                                 </div>
                                 <div className={styles.image}>
                                     <Image src={andrasiova} alt={'andrasiova'}/>
@@ -260,16 +240,16 @@ export default function PropertyPage({nextProperties}) {
                         <Row>
                             {nextProperties.map((property) => {
                                 return (
-                                    <Col xl={6} key={property.id} >
-                                        <Property  data={property} sold={false} video={false}/>
+                                    <Col xl={6} key={property.id}>
+                                        <Property data={property} sold={false} video={false}/>
                                     </Col>)
                             })}
 
-                             <Col xl={12} className={styles.relatedPropertiesButton} >
-                                        <Button>
-                                Načíst další nemovitosti
-                            </Button>
-                                    </Col>
+                            <Col xl={12} className={styles.relatedPropertiesButton}>
+                                <Button>
+                                    Načíst další nemovitosti
+                                </Button>
+                            </Col>
                         </Row>
 
                     </Container>
