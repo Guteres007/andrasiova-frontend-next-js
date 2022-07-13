@@ -38,7 +38,7 @@ export default function Header() {
                         </ActiveLink>
                     </li>
                     <li>
-                        <ActiveLink href={'/a'}>
+                        <ActiveLink href={'/blog'}>
                             Blog
                         </ActiveLink>
                     </li>

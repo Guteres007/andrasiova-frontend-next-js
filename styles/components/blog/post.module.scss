@@ -1,0 +1,173 @@
+.post {
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.leftButton {
+  background: white;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  box-shadow: none;
+  top: auto;
+  bottom: 0;
+  filter: none;
+  left: auto;
+  right: 90px;
+  opacity: 1 !important;
+}
+
+.rightButton {
+  background: white;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  top: auto;
+  bottom: 0;
+  right: 20px;
+  left: auto;
+  filter: none;
+  opacity: 1 !important;
+}
+
+.leftButtonForRightSite {
+  left: auto;
+  right: 90px !important;
+}
+
+.rightButtonForRightSite {
+  left: auto;
+  right: 20px !important;
+}
+
+.leftButton svg, .rightButton svg {
+  width: 20px;
+  height: 19px;
+}
+
+.arrowAnchor {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  text-align: right;
+}
+
+.arrowAnchor svg {
+  width: 20px;
+  height: 19px;
+}
+
+.textSection {
+  background: #fff;
+  z-index: 1;
+  position: relative;
+  padding: 36px 36px 20px 25px;
+}
+
+.textSection a {
+  text-decoration: none;
+}
+
+.textSection a:hover .title {
+  text-decoration: underline;
+  text-decoration-color: black;
+}
+
+.title {
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 33px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.params {
+  color: #9a4c12;
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-top: 14px;
+}
+
+.arrowAnchor {
+  position: absolute;
+  right: 20px;
+  bottom: 40px;
+  text-align: right;
+}
+
+.arrowAnchor svg {
+  width: 20px;
+  height: 19px;
+}
+
+.postImage {
+  position: relative;
+  height: 380px;
+}
+
+.postImageFilter {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(217, 211, 206, 0.71);
+}
+
+.labels {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 2;
+  width: 100%;
+}
+
+.labelBase {
+  padding: 11px 20px;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+.labelBase:last-child {
+  margin-right: 0;
+}
+
+.soldLabel {
+  @extend .labelBase;
+  background: #fff;
+  color: #9a4c12;
+}
+
+.videoLabel {
+  @extend .labelBase;
+  background: #9a4c12;
+  color: #fff;
+}
+
+.videoLabel svg {
+  width: 22px;
+  height: 19px;
+  color: #fff;
+  margin-right: 13px;
+}
+
+.soldLabel svg {
+  color: #9a4c12;
+  width: 15px;
+  height: 21px;
+  margin-right: 13px;
+}

@@ -3,7 +3,6 @@ import {faRightLong, faLeftLong, faVideo, faClipboardCheck} from "@fortawesome/f
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/components/properties/property.module.scss'
 import Link from "next/link";
-import {useEffect, useState} from "react";
 import {APP_URL} from "../../globals";
 
 const renderVideo = (item) => {
@@ -24,11 +23,8 @@ const renderVideo = (item) => {
 
 export default function Property({sold, video, data}) {
 
-    const [property, setProperty] = useState(data)
-    const [images, setImages] = useState([])
-    useEffect(() => {
-
-        const imgs = data.medias.filter(image => image.pivot.crop === "default" ).map((image) => {
+        const property = data
+        const images = data.medias.filter(image => image.pivot.crop === "default" ).map((image) => {
           /*  {
                 original: 'https://www.youtube.com/embed/_mw5FCpuLMM',
                 renderItem: renderVideo,
@@ -42,8 +38,7 @@ export default function Property({sold, video, data}) {
             }
 
         })
-        setImages(imgs)
-    }, [])
+
     {/* zatím nechat, ale asi se bude dávat jen na detail nemovitosti */
     }
 

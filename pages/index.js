@@ -86,7 +86,7 @@ export default function Home({properties}) {
                                 {properties.map(function (property, index ) {
                                     let isOdd = (index % 2 !== 0)
                                     return (
-                                        <HomepageProperty data={property} rightSite={isOdd}/>
+                                        <HomepageProperty key={index} data={property} rightSite={isOdd}/>
                                     )
                                 })}
 
