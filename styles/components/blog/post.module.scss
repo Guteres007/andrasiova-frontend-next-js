@@ -84,7 +84,9 @@
   text-align: left;
   text-transform: uppercase;
 }
-
+.titleSmall {
+  font-size: 30px;
+}
 .params {
   color: #9a4c12;
   font-family: "Roboto", sans-serif;
@@ -94,6 +96,10 @@
   letter-spacing: normal;
   line-height: normal;
   margin-top: 14px;
+}
+
+.paramsSmall {
+  font-size: 16px;
 }
 
 .arrowAnchor {
@@ -112,7 +118,9 @@
   position: relative;
   height: 380px;
 }
-
+.postImageSmall {
+   height: 280px;
+}
 .date {
   display: flex;
   flex-direction: column;

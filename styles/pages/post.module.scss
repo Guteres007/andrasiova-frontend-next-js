@@ -3,6 +3,37 @@
   padding-bottom: 110px;
 }
 
+.rightSite {
+  position: relative;
+  background-color: #f4e7de;
+  padding: 90px 0 110px 30px;
+  height: 100%;
+}
+
+.rightSiteOverlay {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  height: 100%;
+  width: 100vw;
+  background: #f4e7de;
+}
+
+.rightSiteTitle {
+  position: relative;
+  color: #000000;
+  font-family: "Oswald", sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 33px;
+  text-align: left;
+  text-transform: uppercase;
+  padding-bottom: 40px;
+}
+
+
 .title {
   display: block;
   text-align: center;
@@ -32,6 +63,12 @@
 .signatureContainer {
   margin-top: 50px;
   text-align: right;
+  padding-right: 50px;
 }
 
+.loadMore {
+  margin-top: 30px;
+  display: flex;
+  flex-flow: column;
+}
 

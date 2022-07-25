@@ -7,7 +7,7 @@ import {useEffect, useState} from "react";
 import {APP_URL} from "../../globals";
 
 
-export default function Post({data}) {
+export default function Post({data, isRelated}) {
     console.log(data)
     const post = data
     const images = post.medias.map((image) => {
@@ -20,7 +20,7 @@ export default function Post({data}) {
     return (
         <Link href={'/blog/' + post?.slugs[0].slug}>
             <a className={styles.post}>
-                <div className={styles.postImage}>
+                <div className={`${styles.postImage} ${isRelated ? styles.postImageSmall : ""}`}>
                     <div className={styles.date}>
                         <span className={styles.dateDay}>
                             28.2.
@@ -33,14 +33,13 @@ export default function Post({data}) {
                 </div>
                 <div>
                     <div className={styles.textSection}>
-                        <h3 className={styles.title}>
+                        <h3 className={`${styles.title} ${isRelated ? styles.titleSmall : ""}`}>
                             {post?.title}
                         </h3>
-                        <div className={styles.params} dangerouslySetInnerHTML={{__html: post?.short_description}}/>
+                        <div className={`${styles.params} ${isRelated ? styles.paramsSmall : ""}`} dangerouslySetInnerHTML={{__html: post?.short_description}}/>
                         <div className={styles.arrowAnchor}>
                             <FontAwesomeIcon className={'text-orange'} icon={faRightLong}/>
                         </div>
-
                     </div>
                 </div>
             </a>
