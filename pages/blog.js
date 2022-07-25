@@ -10,11 +10,11 @@ import Api from "../db/api";
 export async function getServerSideProps() {
     // Fetch data from external API
 
-    let properties = await Api.get( '/nemovitosti')
-    return {props: {properties: properties.data}}
+    let posts = await Api.get( '/blog')
+    return {props: {posts: posts.data}}
 }
 
-export default function nabidkaNemovitosti({properties}) {
+export default function nabidkaNemovitosti({posts}) {
 
     return (
         <BaseLayout>
@@ -32,9 +32,9 @@ export default function nabidkaNemovitosti({properties}) {
                 <div className={styles.blogContainer}>
                     <Container>
                         <Row>
-                             {properties.map(((property, index) => {
+                             {posts.map(((post, index) => {
                                 return (<Col key={index}  xl={6}>
-                                    <Post data={property}/>
+                                    <Post data={post}/>
                                 </Col>)
                             }))}
 
