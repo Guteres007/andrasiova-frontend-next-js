@@ -1,21 +1,11 @@
-import {useRouter} from 'next/router'
 import BaseLayout from "../../components/Base-layout";
-import ImageGallery from 'react-image-gallery';
-import {faRightLong, faLeftLong} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import styles from './../../styles/pages/post.module.scss'
-import Link from "next/link";
 import Image from "next/image";
 import signature from '../../public/podpis.png'
-import andrasiova from './../../public/andrasiova-kontaktni-foto.png'
-
 
 import {Container, Row, Col} from "react-bootstrap";
 import Button from "../../components/Button";
-import Title from "../../components/Title";
-import Property from "../../components/Properties/Property";
 import Api from "../../db/api";
-import {APP_URL} from "../../globals";
 import Post from "../../components/Blog/Post";
 
 export async function getServerSideProps(context) {
@@ -40,7 +30,7 @@ export default function PostPage({blog, coverImage, posts}) {
                                  dangerouslySetInnerHTML={{__html: blog.description}}>
                             </div>
                             <div className={styles.signatureContainer}>
-                                <Image src={signature}/>
+                                <Image src={signature} alt={"podpis"}/>
                             </div>
                         </div>
                     </Col>
@@ -60,7 +50,7 @@ export default function PostPage({blog, coverImage, posts}) {
 
                             <div className={styles.loadMore}>
                                 <Button>
-                                   Načíst další články
+                                    Načíst další články
                                 </Button>
                             </div>
 
