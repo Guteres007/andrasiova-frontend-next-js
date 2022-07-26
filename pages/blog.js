@@ -1,30 +1,27 @@
-import BaseLayout from "../components/Base-layout";
+import BaseLayout from '../components/Base-layout'
 import styles from '../styles/pages/blog.module.scss'
-import {Container, Row, Col} from "react-bootstrap";
-import Title from "../components/Title";
-import Post from "../components/Blog/Post";
+import { Container, Row, Col } from 'react-bootstrap'
+import Title from '../components/Title'
+import Post from '../components/Blog/Post'
 import Button from './../components/Button'
-import Api from "../db/api";
+import Api from '../db/api'
 
 // This gets called on every request
 export async function getServerSideProps() {
     // Fetch data from external API
 
-    let posts = await Api.get( '/blog')
-    return {props: {posts: posts.data}}
+    let posts = await Api.get('/blog')
+    return { props: { posts: posts.data } }
 }
 
-export default function nabidkaNemovitosti({posts}) {
-
+export default function nabidkaNemovitosti({ posts }) {
     return (
         <BaseLayout>
             <div className={styles.blogSection}>
                 <Container>
                     <Row>
                         <Col>
-                            <Title dotsColor={'white'}>
-                                Blog ze světa nemovitostí
-                            </Title>
+                            <Title dotsColor={'white'}>Blog ze světa nemovitostí</Title>
                         </Col>
                     </Row>
                 </Container>
@@ -32,12 +29,13 @@ export default function nabidkaNemovitosti({posts}) {
                 <div className={styles.blogContainer}>
                     <Container>
                         <Row>
-                             {posts.map(((post, index) => {
-                                return (<Col key={index}  xl={6}>
-                                    <Post data={post}/>
-                                </Col>)
-                            }))}
-
+                            {posts.map((post, index) => {
+                                return (
+                                    <Col key={index} xl={6}>
+                                        <Post data={post} />
+                                    </Col>
+                                )
+                            })}
                         </Row>
                     </Container>
                 </div>
@@ -46,9 +44,7 @@ export default function nabidkaNemovitosti({posts}) {
                     <Row>
                         <Col className={styles.textCenter}>
                             {/* Zde se asi bude načítat několik nemovitostí a na klik další */}
-                            <Button>
-                                Načíst další články
-                            </Button>
+                            <Button>Načíst další články</Button>
                         </Col>
                     </Row>
                 </Container>

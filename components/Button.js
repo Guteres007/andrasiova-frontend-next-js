@@ -1,8 +1,8 @@
 import styles from '../styles/components/button.module.scss'
-import Link from "next/link";
-import {useRouter} from "next/router";
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export default function Button({href, children}) {
+export default function Button({ href, children }) {
     const router = useRouter()
 
     const handleClick = (e) => {
@@ -12,13 +12,16 @@ export default function Button({href, children}) {
     if (href?.length > 0) {
         return (
             <Link href={href}>
-                <a onClick={handleClick} className={styles.button}>{children}</a>
+                <a onClick={handleClick} className={styles.button}>
+                    {children}
+                </a>
             </Link>
         )
     } else {
         return (
-            <button className={styles.button}  onClick={handleClick}>
+            <button className={styles.button} onClick={handleClick}>
                 {children}
-            </button>)
+            </button>
+        )
     }
 }

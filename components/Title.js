@@ -1,5 +1,5 @@
 import styles from '../styles/components/title.module.scss'
-export default function Title({children, color, dotsColor}) {
+export default function Title({ children, color, dotsColor }) {
     let titleBase = styles.title
     let titleColor = styles.titleBlack
     let dotColor = styles.dotsWhite
@@ -7,19 +7,18 @@ export default function Title({children, color, dotsColor}) {
         titleColor = styles.titleWhite
     }
     if (dotsColor === 'orange') {
-       dotColor = styles.dotsOrange
+        dotColor = styles.dotsOrange
     }
 
     if (dotsColor === 'super-orange') {
-       dotColor = styles.dotsSuperOrange
+        dotColor = styles.dotsSuperOrange
     }
 
-        return (
-            <div className={styles.textCenter}>
-                <h2 className={titleBase + ' ' + titleColor + ' ' + dotColor}>
-                  {children}
-                </h2>
-            </div>
-        )
-
+    return (
+        <div className={styles.textCenter}>
+            <h2 className={titleBase + ' ' + titleColor + ' ' + dotColor}>
+                {children}
+            </h2>
+        </div>
+    )
 }

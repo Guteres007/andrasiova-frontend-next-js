@@ -1,14 +1,20 @@
-import {useMemo} from "react";
-import {Col, Container, Row} from "react-bootstrap";
+import { useMemo } from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 import styles from '../styles/components/footer.module.scss'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faPhoneSquare, faEnvelopeSquare,} from "@fortawesome/free-solid-svg-icons";
-import {faFacebookSquare, faYoutubeSquare, faInstagramSquare} from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+    faPhoneSquare,
+    faEnvelopeSquare,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+    faFacebookSquare,
+    faYoutubeSquare,
+    faInstagramSquare,
+} from '@fortawesome/free-brands-svg-icons'
+import Link from 'next/link'
 
 export default function Footer() {
-    const year = new Date().getFullYear();
+    const year = new Date().getFullYear()
     return (
         <div className={styles.footer}>
             <div className={styles.ctaSection}>
@@ -16,7 +22,7 @@ export default function Footer() {
                     <Row>
                         <Col xl={6}>
                             <strong className={styles.title}>
-                                Neváhejte se na <br/>
+                                Neváhejte se na <br />
                                 mě obrátit
                             </strong>
                         </Col>
@@ -25,8 +31,11 @@ export default function Footer() {
                                 <li>
                                     <Link href={'/pryc'}>
                                         <a>
-                                            <FontAwesomeIcon className={'text-white'} color={"white"}
-                                                             icon={faPhoneSquare}/>
+                                            <FontAwesomeIcon
+                                                className={'text-white'}
+                                                color={'white'}
+                                                icon={faPhoneSquare}
+                                            />
                                             <span>734 522 841</span>
                                         </a>
                                     </Link>
@@ -34,14 +43,16 @@ export default function Footer() {
                                 <li>
                                     <Link href={'/pryc'}>
                                         <a>
-                                            <FontAwesomeIcon className={'text-white'} icon={faEnvelopeSquare}/>
+                                            <FontAwesomeIcon
+                                                className={'text-white'}
+                                                icon={faEnvelopeSquare}
+                                            />
                                             <span>andrasiova@seznam.cz</span>
                                         </a>
                                     </Link>
                                 </li>
                             </ul>
                         </Col>
-
                     </Row>
                 </Container>
             </div>
@@ -53,37 +64,27 @@ export default function Footer() {
                             <ul>
                                 <li>
                                     <Link href={'/pryc'}>
-                                        <a>
-                                            O mně
-                                        </a>
+                                        <a>O mně</a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
-                                        <a>
-                                            Nabídka nemovitostí
-                                        </a>
+                                        <a>Nabídka nemovitostí</a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
-                                        <a>
-                                            Poptávka
-                                        </a>
+                                        <a>Poptávka</a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
-                                        <a>
-                                            Blog
-                                        </a>
+                                        <a>Blog</a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
-                                        <a>
-                                            Kontakt
-                                        </a>
+                                        <a>Kontakt</a>
                                     </Link>
                                 </li>
                             </ul>
@@ -97,7 +98,7 @@ export default function Footer() {
                     <Row>
                         <Col xl={4}>
                             <p>
-                                © {year} Eva Andrášiová. <br/>
+                                © {year} Eva Andrášiová. <br />
                                 Všechna práva vyhrazena
                             </p>
                         </Col>
@@ -106,21 +107,30 @@ export default function Footer() {
                                 <li>
                                     <Link href={'/pryc'}>
                                         <a>
-                                            <FontAwesomeIcon className={'text-white'} icon={faFacebookSquare}/>
+                                            <FontAwesomeIcon
+                                                className={'text-white'}
+                                                icon={faFacebookSquare}
+                                            />
                                         </a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
                                         <a>
-                                            <FontAwesomeIcon className={'text-white'} icon={faInstagramSquare}/>
+                                            <FontAwesomeIcon
+                                                className={'text-white'}
+                                                icon={faInstagramSquare}
+                                            />
                                         </a>
                                     </Link>
                                 </li>
                                 <li>
                                     <Link href={'/pryc'}>
                                         <a>
-                                            <FontAwesomeIcon className={'text-white'} icon={faYoutubeSquare}/>
+                                            <FontAwesomeIcon
+                                                className={'text-white'}
+                                                icon={faYoutubeSquare}
+                                            />
                                         </a>
                                     </Link>
                                 </li>
@@ -129,7 +139,7 @@ export default function Footer() {
 
                         <Col xl={4}>
                             <div className={styles.textRight}>
-                                Developed by Martin Andráši <br/>
+                                Developed by Martin Andráši <br />
                                 UI & UX Michal Brtníček
                             </div>
                         </Col>
