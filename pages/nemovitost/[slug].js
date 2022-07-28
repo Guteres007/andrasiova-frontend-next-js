@@ -190,7 +190,7 @@ export default function PropertyPage({ nextProperties, property, images, coverIm
                     <Row>
                         <Col xl={7}>
                             <Col xl={10}>
-                                <div className={styles.contactSection}>
+                                <div className={styles.contactFormSection}>
                                     <Row>
                                         <Col xl={6}>
                                             <input

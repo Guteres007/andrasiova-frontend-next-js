@@ -2,10 +2,7 @@ import { useMemo } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import styles from '../styles/components/footer.module.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-    faPhoneSquare,
-    faEnvelopeSquare,
-} from '@fortawesome/free-solid-svg-icons'
+import { faPhoneSquare, faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons'
 import {
     faFacebookSquare,
     faYoutubeSquare,

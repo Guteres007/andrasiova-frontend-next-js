@@ -1,0 +1,112 @@
+.contactSection {
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 140px;
+    min-height: 960px;
+}
+
+.coverImageContainer {
+  position: absolute;
+  right: -120px;
+}
+
+.leftSite {
+    max-width: 580px;
+}
+.header {
+    position: relative;
+}
+.textUnderline {
+    position: relative;
+  }
+.textUnderline:before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    height: 24px;
+    background-color: #f4e7de;
+    display: block;
+}
+  
+.header span {
+    color: #000000;
+    font-family: "Oswald", sans-serif;
+    font-size: 100px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 130px;
+    text-transform: uppercase;
+}
+
+.description {
+    margin-top: 80px;
+    color: #000000;
+    font-family: "Roboto", sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 41px;
+}
+
+
+.contactLinkSection {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 70px;
+  }
+  
+  .contactLinkSection a {
+    font-family: "Oswald", sans-serif;
+    color: #000;
+    font-size: 33px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: normal;
+    text-align: left;
+    text-decoration: none;
+  }
+  
+  .textRight {
+    text-align: right;
+  }
+  .contactLinkSection li:last-child {
+    margin-top: 10px;
+  }
+  
+  .contactLinkSection a span {
+    margin-left: 26px;
+  }
+  
+  
+.contactMe {
+    position: relative;
+    background: #a25a25;
+    overflow-x: clip;
+  }
+  
+  .contactMe .imageSection {
+    background: #9a4c12;
+    height: 100%;
+  }
+  
+  .contactMe .image {
+    position: absolute !important;
+    bottom: -120px !important;
+    padding-left: 50px;
+  }
+  
+  .contactMe .title {
+    position: absolute;
+    top: 90px;
+    height: 83px;
+    width: 100%;
+  }
+  
+  .contactMe .contactFormSection {
+    padding-top: 230px;
+    padding-bottom: 90px;
+  }
+  

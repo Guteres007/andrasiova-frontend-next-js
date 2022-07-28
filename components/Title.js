@@ -16,9 +16,7 @@ export default function Title({ children, color, dotsColor }) {
 
     return (
         <div className={styles.textCenter}>
-            <h2 className={titleBase + ' ' + titleColor + ' ' + dotColor}>
-                {children}
-            </h2>
+            <h2 className={titleBase + ' ' + titleColor + ' ' + dotColor}>{children}</h2>
         </div>
     )
 }

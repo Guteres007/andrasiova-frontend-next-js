@@ -13,8 +13,7 @@ export async function getServerSideProps(context) {
     let blog = await Api.get('/blog/' + slug)
     let posts = await Api.get('/blog')
     const coverImage = blog.data.medias.filter(
-        (image) =>
-            image.pivot.role === 'cover' && image.pivot.crop === 'default'
+        (image) => image.pivot.role === 'cover' && image.pivot.crop === 'default'
     )[0]
     return { props: { blog: blog.data, coverImage, posts: posts.data } }
 }
@@ -42,9 +41,7 @@ export default function PostPage({ blog, coverImage, posts }) {
                     <Col xl={4}>
                         <div className={styles.rightSite}>
                             <div className={styles.rightSiteOverlay} />
-                            <h2 className={styles.rightSiteTitle}>
-                                Další články
-                            </h2>
+                            <h2 className={styles.rightSiteTitle}>Další články</h2>
                             {posts.map((post, index) => {
                                 return (
                                     <Col key={index} xl={12}>

@@ -14,9 +14,7 @@ function ActiveLink({ children, href }) {
         <Link href={href}>
             <a
                 onClick={handleClick}
-                className={
-                    router.asPath === href ? styles.active : styles.menuLink
-                }
+                className={router.asPath === href ? styles.active : styles.menuLink}
             >
                 {children}
             </a>

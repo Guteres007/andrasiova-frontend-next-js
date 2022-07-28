@@ -42,7 +42,7 @@ export default function Home({ properties }) {
                                     </p>
 
                                     <p className={styles.signature}>
-                                        <Image src={signature} />
+                                        <Image src={signature} alt={'podpis'} />
                                     </p>
                                 </div>
 
@@ -54,7 +54,7 @@ export default function Home({ properties }) {
                             <Col sm={8}>
                                 <div className={styles.coverImage}>
                                     <p>
-                                        <Image src={coverImage} />
+                                        <Image src={coverImage} alt={'Andrášiová'} />
                                     </p>
                                 </div>
                             </Col>
