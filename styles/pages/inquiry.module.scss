@@ -1,0 +1,65 @@
+.inquirySection {
+  padding: 100px 0 115px 0;
+  background: #f4e7de;
+}
+
+.propertyTypes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.propertyType {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 190px;
+  height: 173px;
+  padding-top: 30px;
+  cursor: pointer;
+}
+.propertyTypeActive {
+  background-color: #ffffff;
+}
+.propertyType h2 {
+  margin-top: 30px;
+  text-align: center;
+  height: 48px;
+  color: #5b1500;
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  line-height: 48px;
+}
+.propertyType svg {
+  font-size: 30px;
+}
+.hr{
+  background: #fff;
+  height: 1px;
+  opacity: 1;
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+.textareaHeight {
+  height: 145px;
+}
+
+
+.saleType {
+  margin-top: 13px;
+}
+
+
+.saleTypeInput {
+  color: #5b1500;
+  font-family: 'Oswald', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0.3px;
+  line-height: 29px;
+}
+

@@ -34,7 +34,7 @@ h1, h2, h3, h4, h5, h6 {
 
 */
 
-.input {
+.input , .select{
   border: 0;
   background: #fff;
   padding-left: 20px;
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 25px;
 }
 
-.input::placeholder, .textarea::placeholder {
+.input::placeholder, .textarea::placeholder, .select::placeholder {
   color: #5b1500;
   font-family: "Oswald", sans-serif;
   font-size: 21px;
@@ -68,4 +68,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 48px;
   width: 100%;
   margin-bottom: 25px;
+}
+
+
+.form-check-input:checked {
+  background-color: #5b1500;
+    border-color: #5b1500;
 }

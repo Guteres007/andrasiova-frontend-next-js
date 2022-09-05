@@ -31,7 +31,7 @@ export default function Header() {
                         <ActiveLink href={'/nabidka-nemovitosti'}>Nabídka nemovitostí</ActiveLink>
                     </li>
                     <li>
-                        <ActiveLink href={'/a'}>Poptávka</ActiveLink>
+                        <ActiveLink href={'/poptavka'}>Poptávka</ActiveLink>
                     </li>
                     <li>
                         <ActiveLink href={'/blog'}>Blog</ActiveLink>
